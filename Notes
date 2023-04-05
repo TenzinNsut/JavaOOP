@@ -1,0 +1,97 @@
+E X C E P T I O N - H A N D L I N G
+
+                                                 O B J E C T
+                                                     ||
+                                                  Throwable
+                                                 |         |
+                               Exception <-------|         |-------> Error
+                                  |                                    |
+                                  |                                    |
+                         ---------|----------
+                         |                  |
+                      checked            unchecked
+                   (compileTime)         (runTime)
+
+------------------------------------------------------------------------------------------------------------------------------
+
+A B S T R A C T I O N:
+-hiding unnecessary detail and only showing valuable information.
+Example: car, Gmail.
+
+if a class is declared as "abstract" then we cannot call the "constructor" of this class; but we can call its child class.
+Note: abstract methods are called without any "implementation"; no braces.
+Example:
+    abstract void coordinate(double deltaX, double deltaY);
+Note: the "child class" will declare the "IMPLEMENTATION" of the "Parents" abstract method();
+
+------------------------------------------------------------------------------------------------------------------------------
+
+I N T E R F A C E S:
+-will define contract/specification which will govern; how a program logic will behave.
+
+Interfaces specify what a class must do and not how.
+It is the blueprint of the behaviour.
+Interface do not have constructor.
+The interface cannot contain concrete(with implementation) methods
+
+
+Why do we use an Interface?
+To achieve total abstraction.
+Since java does not support multiple inheritances in the case of class, by using an interface it can achieve multiple inheritances.
+
+Note: interface can inherit "two" interfaces; but that is not possible in case of classes.
+NOTE:
+    interface -> interface : extends
+    class -> interface: implements
+    class -> class : extends
+
+
+
+C O N C L U S I O N:
+->Multiple inheritance
+abstract classes: not supported
+interfaces: supported
+-> variables and methods
+abstract class allows:
+1.) methods() to be: regular, static, abstract.(optional)
+2.) Variables() to be: final, static.(optional)
+interfaces allows:
+1.) methods(): static, default, abstract [By Default]
+2.) Variables(): final,static [By Default]
+
+------------------------------------------------------------------------------------------------------------------------------
+
+ - - final vs finally vs finalize. - -
+-> final: keyword
+is a keyword used in:
+1.) variables:
+final int NUM = 5; final variables must be initialized and the value cannot be changed.
+2.) methods()
+final methods cannot be overridden.
+3.) classes()
+final class, it cannot be extended.
+
+-> finally{}: block; it used to write clean up code.
+Note: finally block is always called; whether or not there was error.
+try{
+    f.open();
+    f.write();
+}catch{
+    catch error/exception.
+}finally{
+// clean up code.
+    f.close();
+    n.close();
+}
+
+->finalize(): method; it is called after destruction of object[unused object].
+Note: before garbage collector destroys the object; it deallocates resources(close.db()...); in case the object was using any.
+So, finalize() method is where we write code to deallocate resources.
+
+finalize(){
+    f.close();
+    n.close();
+}
+
+
+

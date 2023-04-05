@@ -1,0 +1,12 @@
+I N T E R F A C E S:
+-will define contract/specification which will govern; how a program logic will behave.
+
+Interfaces specify what a class must do and not how.
+It is the blueprint of the behaviour.
+Interface do not have constructor.
+The interface cannot contain concrete(with implementation) methods
+
+
+Why do we use an Interface?
+To achieve total abstraction.
+Since java does not support multiple inheritances in the case of class, by using an interface it can achieve multiple inheritances.

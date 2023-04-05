@@ -1,0 +1,13 @@
+                                           E X C E P T I O N - H A N D L I N G
+
+                                                 O B J E C T
+                                                     ||
+                                                  Throwable
+                                                 |         |
+                               Exception <-------|         |-------> Error
+                                  |                                    |
+                                  |                                    |
+                         ---------|----------
+                         |                  |
+                      checked            unchecked
+                   (compileTime)         (runTime)
